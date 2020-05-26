@@ -1,8 +1,11 @@
 {
   "name": "cleverbot-discord",
   "version": "1.0.0",
-  "description": "Talk to Cleverbot from discord.",
+  "description": "Talk to Cleverbot on Discord.",
   "main": "index.js",
+  "scripts": {
+    "start": "node ."
+  },
   "author": "Oelin <me.oelin@gmail.com>",
   "license": "ISC",
   "dependencies": {
