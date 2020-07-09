@@ -1,1 +1,1 @@
-module.exports = '' // insert your token here.
+module.exports = '' // insert your bot's token.
