@@ -1,7 +1,7 @@
 {
   "name": "cleverbot-discord",
   "version": "1.0.0",
-  "description": "Talk to Cleverbot on Discord.",
+  "description": "chat with cleverbot from discord",
   "main": "index.js",
   "scripts": {
     "start": "node ."
