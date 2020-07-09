@@ -14,13 +14,9 @@ agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_6) AppleWebKit/537.36 (KHT
 def route(path=''):
 	return f'https://{server}/{path}'
 
-# This is a token which must be valid for the request to work.
-
 def icogno(text):
 	string = f's={quote(text)}' + '&cb_settings_language=en&cb_settings_scripting=no&islearning=1&icognoid=wsf'
 	return md5(bytes(string[:26], 'utf-8')).hexdigest()
-
-# Ask a question to Cleverbot using a POST request.
 
 def ask(text):
 	headers = {
@@ -40,22 +36,16 @@ def ask(text):
     'icognoid': 'wsf',
     'icognocheck': icogno(text)
   }
-
-  # Create a new session.
     
   user = session()
   user.get(route())
   user.cookies.set_cookie(create_cookie('_cbsid', '-1'))
 
-  # Create and encode the POST request.
-    
   query = Request('POST', route(endpoint), headers=headers, data=data)
   query = user.prepare_request(query)
   query.body = query.body.replace('+', '%20')
   query.headers['Content-Length'] = len(query.body)
-    
-  # Send the request and extract Cleverbot's answer.
-    
+  
   reply = user.send(query)
   answer = unquote(reply.headers['CBOUTPUT'])
 
