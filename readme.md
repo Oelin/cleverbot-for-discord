@@ -1,3 +1,3 @@
 # cleverbot-discord
 
-A simple discord bot which allows you to talk to [Cleverbot](https://cleverbot.com).
+A simple discord bot which allows you to chat with [cleverbot](https://cleverbot.com).
